@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import SiteHeader from '../components/siteHeader';
 
 
@@ -14,7 +15,10 @@ export default function Home() {
                 <SiteHeader className="z-10 relative" />
                 <main>
                     <div className="min-h-[50vh] flex flex-col items-center justify-center z-10 relative">
-                        <h1>Welcome To Paul's Travel Blog</h1>
+                        <h1 className="text-6xl text-center text-slate-100">Welcome To <span className="text-yellow-400">Paul's</span> Travel Blog</h1>
+                    </div>
+                    <div className="mt-8">
+                        <Link href="/blog" className="text-3xl text-slate-800 bg-slate-100 border py-3 px-4 hover:bg-yellow-300 transition">Read Blog</Link>
                     </div>
                 </main>
             </div>
