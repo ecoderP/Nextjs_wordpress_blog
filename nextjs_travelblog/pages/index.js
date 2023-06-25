@@ -16,10 +16,13 @@ export default function Home() {
                 <main>
                     <div className="min-h-[50vh] flex flex-col items-center justify-center z-10 relative">
                         <h1 className="text-6xl text-center text-slate-100">Welcome To <span className="text-yellow-400">Paul's</span> Travel Blog</h1>
+                        <div className="mt-20">
+                            <Link href="/blog" 
+                                className="text-2xl text-slate-100 border-slate-100 border-2 rounded-md py-3 px-4 hover:bg-yellow-300 hover:text-slate-800 transition"
+                                >Read Blog</Link>
+                        </div>
                     </div>
-                    <div className="mt-8">
-                        <Link href="/blog" className="text-3xl text-slate-800 bg-slate-100 border py-3 px-4 hover:bg-yellow-300 transition">Read Blog</Link>
-                    </div>
+                    
                 </main>
             </div>
         </>
