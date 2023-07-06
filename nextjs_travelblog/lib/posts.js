@@ -8,7 +8,7 @@ export async function getAllPosts() {
               title
               date
               slug
-              excerpt
+              excerpt(format: RENDERED)
               featuredImage {
                 node {
                   mediaDetails {
