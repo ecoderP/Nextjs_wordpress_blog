@@ -9,7 +9,7 @@ export async function getAllPosts() {
               date
               slug
               excerpt(format: RENDERED)
-              featuredImage {
+               featuredImage {
                 node {
                   mediaDetails {
                     file
@@ -42,4 +42,51 @@ export async function getAllPosts() {
     const allPosts = resJson.data.posts;
 
     return allPosts;
+}
+
+export async function getSinglePost(slug) {
+  const query = {
+    query: `query getSinglePost {
+      post(id: "${slug}", idType: SLUG) {
+        content(format: RENDERED)
+        date
+        excerpt(format: RENDERED)
+        modified
+        slug
+        title(format: RENDERED)
+        featuredImage {
+          node {
+            mediaDetails {
+              height
+              width
+            }
+            sourceUrl
+          }
+        }
+      }
+      categories {
+        nodes {
+          name
+          slug
+        }
+      }
+    }`
+  };
+
+  const resJson = await graphqlRequest(query);
+  const singlePost = resJson.data.post;
+
+  return singlePost; 
+}
+
+export async function getPostSlugs() {
+  const query = {
+    query: `query getPostSlugs {
+      posts {
+        nodes {
+          slug
+        }
+      }
+    }`
+  }
 }
